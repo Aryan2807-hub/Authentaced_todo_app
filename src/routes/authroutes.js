@@ -7,7 +7,7 @@ const router= express.Router()
 
 
 router.post('/register',(req,res)=>{
-   res.send('<h1>Register</h1>')     
+       
 })
 router.post('/login',(req,res)=>{
 

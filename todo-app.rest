@@ -1,4 +1,10 @@
 ###
-GET http://localhost:5000/test
+GET http://localhost:5000
 ###
-GET http://localhost:5000/auth/register
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+{
+    "username":"",
+    "password":""
+}
+###

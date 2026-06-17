@@ -9,14 +9,16 @@ const port = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname=dirname(__filename);
 //routes
-app.use('/auth', authRoutes)
-app.use('/todo', todoRoutes)
+
 app.use(express.json() )
 app.use(express.static(path.join(__dirname,'../public')))
 
-app.get('/test',(req,res)=>{
+app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'public','index.html'))
 })
+app.use('/auth', authRoutes)
+app.use('/todo', todoRoutes)
+
 
 
 // app.get('auth/reginster',(req,res)=>{
