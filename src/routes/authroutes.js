@@ -7,7 +7,10 @@ const router= express.Router()
 
 
 router.post('/register',(req,res)=>{
-       
+    const body= req.body
+    const {username,password}= body
+    console.log(username,password)
+      
 })
 router.post('/login',(req,res)=>{
 
