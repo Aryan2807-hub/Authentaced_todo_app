@@ -6,8 +6,8 @@ db.exec(`
         id integer primary key autoincrement,
         username text unique,
         password text
-    );
-`);
+    )
+`)
 db.exec(`
     create table todos(
         id integer primary key autoincrement,
@@ -15,7 +15,7 @@ db.exec(`
         title text,
         completed boolean default 0,
         foreign key(user_id) references users(id)
-    );
-`);
+    )
+`)
 
 export default db;
