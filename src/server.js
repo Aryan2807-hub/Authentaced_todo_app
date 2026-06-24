@@ -4,6 +4,7 @@ import path,{dirname} from 'path';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/authroutes.js'
 import todoRoutes from './routes/todoroute.js'
+import authMiddleware from './middleware/authMiddleware.js'
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -18,57 +19,11 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'public','index.html'))
 })
 app.use('/auth', authRoutes)
-app.use('/todo', todoRoutes)
+app.use('/todo',authMiddleware, todoRoutes)
 
 
 
 // app.get('auth/reginster',(req,res)=>{
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
